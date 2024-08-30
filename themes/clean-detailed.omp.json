@@ -97,7 +97,7 @@
         },
         {
           "properties": {
-            "time_format": "15:04"
+            "time_format": "RFC822Z"
           },
           "style": "plain",
           "template": " \u2665 {{ .CurrentDate | date .Format }} |",
