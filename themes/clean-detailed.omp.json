@@ -114,7 +114,7 @@
             "folder_separator_icon": " \uf061 ",
             "home_icon": "\ueb06 "
           },
-          "style": "plain",
+          "style": "mixed",
           "template": " {{ .Path }} ",
           "type": "path"
         }
