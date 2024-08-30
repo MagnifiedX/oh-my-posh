@@ -131,6 +131,7 @@
           },
           "style": "plain",
           "template": "\u2570\u2500 ",
+          "status_template": "{{ .Code }}",
           "type": "status"
         }
       ],
