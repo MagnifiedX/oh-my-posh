@@ -12,7 +12,18 @@
           "properties": {
             "macos": "\uf179 ",
             "ubuntu": "\uf31b ",
-            "windows": "\ue62a "
+            "windows": "\ue62a ",
+            "debian": "\uf306 ",
+            "gentoo": "\uf30d ",
+            "fedora": "\uf30a ",
+            "opensuse": "\uf314 ",
+            "redhat": "\uf316 ",
+            "android": "\uf17b ",
+            "arch": "\uf303 ",
+            "centos": "\uf305 ",
+            "mint": "\uf30e ",
+            "raspbian": "\uf315 ",
+            "slackware": "\uf319 "
           },
           "style": "diamond",
           "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}}",
