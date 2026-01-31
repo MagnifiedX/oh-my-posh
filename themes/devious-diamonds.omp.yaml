@@ -75,6 +75,22 @@ blocks:
           display_mode: files
           fetch_version: false
         template: " ﴃ {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+      - type: docker
+        style: powerline
+        powerline_symbol: 
+        foreground: "#000000"
+        background: "#0B59E7"
+        display_mode: "files"
+        fetch_content: true
+        fetch_sdk_version: true
+        fetch_version: true
+        template: "  {{ .Context }} "
+      - type: dotnet
+        style: powerline
+        powerline_symbol: 
+        foreground: "#000000"
+        background: "#00ffff"
+        template: "  {{ .Full }} "
       - type: go
         style: powerline
         powerline_symbol: 
@@ -159,21 +175,38 @@ blocks:
           display_mode: files
           fetch_version: true
         template: "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+      - type: terraform
+        style: powerline
+        powerline_symbol: 
+        background: lightMagenta
+        foreground: lightWhite
+        template: "  {{ .WorkspaceName }}{{ if .Version }} {{ .Version }}{{ end }}"
       - type: time
         style: powerline
         powerline_symbol: 
         background: yellow
         foreground: black
         options:
-          time_format: Mon | 15:04:05
+          time_format: 2006-01-02T15:04:05Z07:00
         template: " {{ .CurrentDate | date .Format }} "
+      - type: owm
+        style: powerline
+        powerline_symbol: 
+        foreground: "#ffffff"
+        background: "#FF0000"
+        template: "{{.Weather}} ({{.Temperature}}{{.UnitIcon}})"
+        options:
+          api_key: 3b022c433b5b998b644a90447abe56f1
+          location: Chicopee,MA,US
+          units: imperial
+          http_timeout: 20
       - type: executiontime
         style: diamond
         trailing_diamond: 
         background: cyan
         foreground: black
         options:
-          style: austin
+          style: roundrock
           threshold: 0
         template: " {{ .FormattedMs }} "
   - type: prompt
@@ -208,6 +241,12 @@ blocks:
         options:
           always_enabled: true
         template: " {{ if gt .Code 0 }}󰋔 {{ else }} {{ end }}{{ if eq ( gt .Code 0 ) .Segments.Path.Writable}} {{ end }}"
+      - type: upgrade
+        style: plain
+        foreground: "#111111"
+        background: "#FFD664"
+        options:
+          cache_duration: 6h
       - type: path
         style: powerline
         powerline_symbol: 
